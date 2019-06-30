@@ -1,17 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Header from '../Header';
+import Catalog from '../pages/Catalog';
+import Basket from '../pages/Basket';
+import Order from '../pages/Order';
+import ThankYou from '../pages/ThankYou';
 
 const displayName = 'App';
 
-const propTypes = {
-  language: PropTypes.string.isRequired
-};
-
-export default function App({ language }) {
-  return <Header page="catalog" language={language} />;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/" exact component={Catalog} />
+        <Route path="/basket" component={Basket} />
+        <Route path="/order" component={Order} />
+        <Route path="/thankyou" component={ThankYou} />
+      </Switch>
+    </BrowserRouter>
+  );
 }
 
 App.displayName = displayName;
-App.propTypes = propTypes;

@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import LangSwitch from '../LangSwitch';
-import HeaderText from '../HeaderText';
-
 const displayName = 'Header';
 
 const propTypes = {
-  page: PropTypes.string.isRequired
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+};
+
+const defaultProps = {
+  children: null
 };
 
 const divStyle = {
@@ -17,14 +18,10 @@ const divStyle = {
   alignItems: 'center',
   borderBottom: '2px solid gray'
 };
-export default function Header({ page }) {
-  return (
-    <div style={divStyle}>
-      <LangSwitch currentLanguage="ukrainian" />
-      <HeaderText value={page} />
-    </div>
-  );
+export default function Header({ children }) {
+  return <div style={divStyle}>{children}</div>;
 }
 
 Header.displayName = displayName;
 Header.propTypes = propTypes;
+Header.defaultProps = defaultProps;
