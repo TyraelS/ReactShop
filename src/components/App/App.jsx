@@ -7,7 +7,7 @@ import Catalog from '../pages/Catalog';
 // import ThankYou from '../pages/ThankYou';
 
 import Header from '../Header';
-import HeaderText from '../HeaderText';
+import { HeaderText } from '../Texts';
 import LangSwitch from '../LangSwitch';
 
 const displayName = 'App';

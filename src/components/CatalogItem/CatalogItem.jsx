@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CatalogItemLogo from '../CatalogItemLogo';
-import CatalogItemText from '../CatalogItemText';
+import ProductLogo from '../ProductLogo';
+import { DescriptionText } from '../Texts';
 import CatalogItemPrice from '../CatalogItemPrice';
 import CatalogItemButton from '../CatalogItemButton';
 
@@ -34,8 +34,8 @@ const divStyle = {
 export default function CatalogItem({ product: { id, image, title, text, price, handleAdd } }) {
   return (
     <div style={divStyle}>
-      <CatalogItemLogo data={{ image, title }} />
-      <CatalogItemText data={text} />
+      <ProductLogo data={{ image, title }} />
+      <DescriptionText data={text} />
       <CatalogItemPrice data={price} />
       <CatalogItemButton id={id} onAdd={handleAdd} />
     </div>

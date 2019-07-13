@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { HeaderText } from '../Texts';
 
 const displayName = 'CatalogItemLogo';
 
@@ -39,7 +40,7 @@ export default function CatalogItemLogo({ data: { image, title } }) {
         style={logoStyle.logo}
         src={image || 'https://avatanplus.com/files/resources/mid/5968a2c8f2ed115d40bbe123.png'}
       />
-      <span style={logoStyle.text}>{title}</span>
+      <HeaderText value={title} />
     </div>
   );
 }
