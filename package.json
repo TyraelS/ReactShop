@@ -14,8 +14,7 @@
     "start:app": "webpack-dev-server --mode development",
     "start:mockserver": "node mockServer.js",
     "test": "jest",
-    "precommit": "lint-staged",
-    "prepush": "npm run test"
+    "precommit": "lint-staged"
   },
   "sideEffects": false,
   "dependencies": {
