@@ -1,8 +1,5 @@
 import React from 'react';
 
-import Header from '../../Header';
-import HeaderText from '../../HeaderText';
-import LangSwitch from '../../LangSwitch';
 import CatalogItem from '../../CatalogItem';
 
 const displayName = 'Catalog';
@@ -72,18 +69,12 @@ const handleAdd = id => {
 
 export default function Catalog() {
   return (
-    <>
-      <Header>
-        <LangSwitch currentLanguage="english" />
-        <HeaderText value="catalog" />
-      </Header>
-      <div style={divStyle}>
-        {products.map((item, i) => {
-          // eslint-disable-next-line react/no-array-index-key
-          return <CatalogItem key={i} product={{ ...item, handleAdd }} />;
-        })}
-      </div>
-    </>
+    <div style={divStyle}>
+      {products.map((item, i) => {
+        // eslint-disable-next-line react/no-array-index-key
+        return <CatalogItem key={i} product={{ ...item, handleAdd }} />;
+      })}
+    </div>
   );
 }
 

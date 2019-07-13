@@ -16,6 +16,7 @@ export default function LangSwitch({ currentLanguage }) {
   return (
     <select style={langSwitchStyle} value={currentLanguage}>
       {langList.map((item, i) => {
+        // eslint-disable-next-line react/no-array-index-key
         return <option key={i}>{item}</option>;
       })}
     </select>
