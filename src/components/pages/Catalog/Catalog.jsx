@@ -1,65 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import CatalogItem from '../../CatalogItem';
+import CatalogStyled from './CatalogStyle';
 
 const displayName = 'Catalog';
-const products = [
-  {
-    id: 1,
-    image: 'somelinks.com',
-    title: 'phone1',
-    text: 'simple description',
-    price: 15
-  },
-  {
-    id: 2,
-    image: 'somelinks.com',
-    title: 'phone2',
-    text: 'simple description',
-    price: 12
-  },
-  {
-    id: 3,
-    image: 'somelinks.com',
-    title: 'phone3',
-    text: 'simple description',
-    price: 10
-  },
-  {
-    id: 3,
-    image: 'somelinks.com',
-    title: 'phone3',
-    text: 'simple description',
-    price: 10
-  },
-  {
-    id: 3,
-    image: 'somelinks.com',
-    title: 'phone3',
-    text: 'simple description',
-    price: 10
-  },
-  {
-    id: 3,
-    image: 'somelinks.com',
-    title: 'phone3',
-    text: 'simple description',
-    price: 10
-  },
-  {
-    id: 3,
-    image: 'somelinks.com',
-    title: 'phone3',
-    text: 'simple description',
-    price: 10
-  }
-];
 
-const divStyle = {
-  display: 'flex',
-  marginTop: '30px',
-  justifyContent: 'space-around',
-  flexWrap: 'wrap'
+const propTypes = {
+  products: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      text: PropTypes.string,
+      price: PropTypes.number.isRequired,
+      image: PropTypes.string
+    }).isRequired
+  ).isRequired
 };
 
 const handleAdd = id => {
@@ -67,15 +23,16 @@ const handleAdd = id => {
   alert(`Product ${id} is added to cart!`);
 };
 
-export default function Catalog() {
+export default function Catalog({ products }) {
   return (
-    <div style={divStyle}>
-      {products.map((item, i) => {
+    <CatalogStyled>
+      {products.map(item => {
         // eslint-disable-next-line react/no-array-index-key
-        return <CatalogItem key={i} product={{ ...item, handleAdd }} />;
+        return <CatalogItem key={products.id} product={{ ...item, handleAdd }} />;
       })}
-    </div>
+    </CatalogStyled>
   );
 }
 
 Catalog.displayName = displayName;
+Catalog.propTypes = propTypes;

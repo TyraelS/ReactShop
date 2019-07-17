@@ -1,24 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
+import store from '../../store';
 import Catalog from '../pages/Catalog';
 // import Basket from '../pages/Basket';
 // import Order from '../pages/Order';
 // import ThankYou from '../pages/ThankYou';
 
-import Header from '../Header';
-import { HeaderText } from '../Texts';
-import LangSwitch from '../LangSwitch';
-
 const displayName = 'App';
 
 export default function App() {
   return (
-    <>
-      <Header>
-        <LangSwitch currentLanguage="english" />
-        <HeaderText value="catalog" />
-      </Header>
+    <Provider store={store}>
       <BrowserRouter>
         <Switch>
           <Route path="/" exact component={Catalog} />
@@ -27,7 +21,7 @@ export default function App() {
           <Route path="/thankyou" component={ThankYou} /> */}
         </Switch>
       </BrowserRouter>
-    </>
+    </Provider>
   );
 }
 
