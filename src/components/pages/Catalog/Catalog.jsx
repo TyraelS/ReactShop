@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import CatalogItem from '../../CatalogItem';
-import CatalogStyled from './CatalogStyle';
+import CatalogStyle from './CatalogStyle';
+import MasterPage from '../MasterPage';
 
 const displayName = 'Catalog';
 
@@ -25,16 +26,17 @@ const handleAdd = id => {
 
 export default function Catalog({ products }) {
   return (
-    <CatalogStyled>
-      {products ? (
-        products.map(item => {
-          // eslint-disable-next-line react/no-array-index-key
-          return <CatalogItem key={products.id} product={{ ...item, handleAdd }} />;
-        })
-      ) : (
-        <div>Loading...</div>
-      )}
-    </CatalogStyled>
+    <MasterPage pageTitle="Catalog">
+      <CatalogStyle>
+        {products ? (
+          products.map(item => {
+            return <CatalogItem key={item.id} product={{ ...item, handleAdd }} />;
+          })
+        ) : (
+          <div>Loading...</div>
+        )}
+      </CatalogStyle>
+    </MasterPage>
   );
 }
 

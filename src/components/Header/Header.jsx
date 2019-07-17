@@ -1,25 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import HeaderStyle from './HeaderStyle';
+import LangDropdown from '../LangDropdown';
+import { HeaderText } from '../Texts';
 
 const displayName = 'Header';
 
 const propTypes = {
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node])
+  headerItem: PropTypes.elementType,
+  pageTitle: PropTypes.string.isRequired
 };
 
 const defaultProps = {
-  children: null
+  headerItem: null
 };
 
-const divStyle = {
-  display: 'flex',
-  width: '100%',
-  height: '50px',
-  alignItems: 'center',
-  borderBottom: '2px solid gray'
-};
-export default function Header({ children }) {
-  return <div style={divStyle}>{children}</div>;
+export default function Header({ headerItem, pageTitle }) {
+  return (
+    <HeaderStyle>
+      <div>
+        <LangDropdown currentLanguage="english" />
+        <HeaderText>{pageTitle}</HeaderText>
+      </div>
+      {headerItem && React.createElement(headerItem)}
+    </HeaderStyle>
+  );
 }
 
 Header.displayName = displayName;
