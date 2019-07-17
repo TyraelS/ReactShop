@@ -19,18 +19,13 @@ const propTypes = {
   ).isRequired
 };
 
-const handleAdd = id => {
-  // eslint-disable-next-line no-alert
-  alert(`Product ${id} is added to cart!`);
-};
-
 export default function Catalog({ products }) {
   return (
     <MasterPage pageTitle="Catalog">
       <CatalogStyle>
         {products ? (
           products.map(item => {
-            return <CatalogItem key={item.id} product={{ ...item, handleAdd }} />;
+            return <CatalogItem key={item.id} {...item} />;
           })
         ) : (
           <div>Loading...</div>

@@ -1,3 +1,3 @@
-import CatalogItemButtonContainer from './CatalogItemButtonContainer';
+import CatalogItemButton from './CatalogItemButton';
 
-export default CatalogItemButtonContainer;
+export default CatalogItemButton;

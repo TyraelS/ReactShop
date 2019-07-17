@@ -1,5 +1,5 @@
 import DescriptionText from './DescriptionText';
 import HeaderText from './HeaderText';
-import ButtonText from './ButtonText';
+import PriceText from './PriceText';
 
-export { DescriptionText, HeaderText, ButtonText };
+export { DescriptionText, HeaderText, PriceText };
