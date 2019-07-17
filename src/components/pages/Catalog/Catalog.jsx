@@ -26,10 +26,14 @@ const handleAdd = id => {
 export default function Catalog({ products }) {
   return (
     <CatalogStyled>
-      {products.map(item => {
-        // eslint-disable-next-line react/no-array-index-key
-        return <CatalogItem key={products.id} product={{ ...item, handleAdd }} />;
-      })}
+      {products ? (
+        products.map(item => {
+          // eslint-disable-next-line react/no-array-index-key
+          return <CatalogItem key={products.id} product={{ ...item, handleAdd }} />;
+        })
+      ) : (
+        <div>Loading...</div>
+      )}
     </CatalogStyled>
   );
 }
