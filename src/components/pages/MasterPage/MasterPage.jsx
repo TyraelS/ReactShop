@@ -8,7 +8,7 @@ const displayName = 'MasterPage';
 
 const propTypes = {
   children: PropTypes.element.isRequired,
-  headerItem: PropTypes.element,
+  headerItem: PropTypes.shape(),
   pageTitle: PropTypes.string.isRequired
 };
 

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import CatalogItem from '../../CatalogItem';
 import CatalogStyle from './CatalogStyle';
 import MasterPage from '../MasterPage';
+import HeaderBasket from '../../HeaderBasket';
 
 const displayName = 'Catalog';
 
@@ -21,7 +22,7 @@ const propTypes = {
 
 export default function Catalog({ products }) {
   return (
-    <MasterPage pageTitle="Catalog">
+    <MasterPage headerItem={HeaderBasket} pageTitle="Catalog">
       <CatalogStyle>
         {products ? (
           products.map(item => {
