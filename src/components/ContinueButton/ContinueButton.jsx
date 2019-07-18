@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { HeaderText } from '../Texts';
-import OrderButtonStyle from './OrderButtonStyle';
+import ContinueButtonStyle from './ContinueButtonStyle';
 
 const displayName = 'OrderButton';
 
@@ -11,15 +11,15 @@ const propTypes = {
   value: PropTypes.string.isRequired
 };
 
-export default function OrderButton({ link, value }) {
+export default function ContinueButton({ link, value }) {
   return (
     <Link to={`/${link}`}>
-      <OrderButtonStyle>
+      <ContinueButtonStyle>
         <HeaderText>{value}</HeaderText>
-      </OrderButtonStyle>
+      </ContinueButtonStyle>
     </Link>
   );
 }
 
-OrderButton.displayName = displayName;
-OrderButton.propTypes = propTypes;
+ContinueButton.displayName = displayName;
+ContinueButton.propTypes = propTypes;

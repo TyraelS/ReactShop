@@ -3,7 +3,7 @@ import { combineReducers } from 'redux-immutable';
 import { Map } from 'immutable';
 import promise from 'redux-promise-middleware';
 import thunkMiddleware from 'redux-thunk';
-import { reducer as formReducer } from 'redux-form';
+import { reducer as reducerForm } from 'redux-form/immutable';
 import { products, initialProductsState } from '../reducers/products';
 import { basketProducts, initialBasketProductsState } from '../reducers/basketProducts';
 
@@ -21,7 +21,7 @@ const store = createStore(
   combineReducers({
     products,
     basketProducts,
-    form: formReducer
+    form: reducerForm
   }),
   initialStoreState,
   enhancer
