@@ -6,6 +6,7 @@ const ProductLogoStyle = styled.div`
   align-items: center;
   margin: 5px;
   width: 50%;
+  min-width: 200px;
 `;
 
 const ProductImage = styled.img.attrs(({ image, title }) => ({
