@@ -10,6 +10,9 @@ const BasketStyle = styled.div`
   & > div {
     margin: 10px;
   }
+  & a {
+    text-decoration: none;
+  }
 `;
 
 export default BasketStyle;

@@ -5,6 +5,7 @@ import MasterPage from '../MasterPage';
 import HeaderTotal from '../../HeaderTotal';
 import BasketItem from '../../BasketItem';
 import { HeaderText } from '../../Texts';
+import OrderButton from '../../OrderButton';
 
 const displayName = 'Basket';
 
@@ -36,6 +37,7 @@ export default function Basket({ basket, basketProducts }) {
         ) : (
           <HeaderText>Basket is empty</HeaderText>
         )}
+        <OrderButton link="order" value="order" />
       </BasketStyle>
     </MasterPage>
   );
